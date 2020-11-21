@@ -22,6 +22,23 @@ class ModHelloWorldHelper
      */    
     public static function getHello($params)
     {
-        return 'Hello, World!';
+        return 
+$language = $params->get('lang', '1');
+$hello    = modHelloWorldHelper::getHello( $language );
+
+// Obtain a database connection
+$db = JFactory::getDbo();
+// Retrieve the shout. Note that we are now retrieving the id not the lang field.
+$query = $db->getQuery(true)
+            ->select($db->quoteName('hello'))
+            ->from($db->quoteName('#__helloworld'))
+            ->where('id = '. $db->Quote($params));
+// Prepare the query
+$db->setQuery($query);
+// Load the row.
+$result = $db->loadResult();
+// Return the Hello.
+return $result;
+
     }
 }

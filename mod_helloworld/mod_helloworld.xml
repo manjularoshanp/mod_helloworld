@@ -11,7 +11,37 @@
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>
+        <folder>sql</folder>
     </files>
-    <config>
+    <config>    
+		<fields name="params">
+		    <fieldset name="basic">
+		        <field
+		               name="lang"
+		               type="sql"
+		               default="1"
+		               label="Select a language"
+		               query="SELECT id AS value, lang FROM #__helloworld" />
+		    </fieldset>
+		</fields>      
     </config>
+
+	<install>
+	     <sql>
+	         <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+	     </sql>
+	</install>
+	
+	<uninstall>
+	     <sql>
+	         <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+	     </sql>
+	</uninstall>
+	
+	<update> 
+	    <schemas>
+	        <schemapath type="mysql">sql/mysql/updates</schemapath> 
+		</schemas> 
+	</update>
+
 </extension>

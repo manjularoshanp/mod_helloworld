@@ -2,8 +2,8 @@
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>Hello, World!</name>
     <author>John Doe</author>
-    <version>1.0.0</version>
-    <description>A simple Hello, World! module.</description>
+    <version>1.0.1</version>
+    <description>A simple Hello, World! module with database.</description>
     <files>
         <filename>mod_helloworld.xml</filename>
         <filename module="mod_helloworld">mod_helloworld.php</filename>
@@ -21,7 +21,7 @@
 		               type="sql"
 		               default="1"
 		               label="Select a language"
-		               query="SELECT id AS value, lang FROM #__helloworld" />
+		               query="SELECT hello AS value, lang FROM #__helloworld" />
 		    </fieldset>
 		</fields>      
     </config>

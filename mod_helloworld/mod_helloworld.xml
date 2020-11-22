@@ -14,16 +14,7 @@
         <folder>sql</folder>
     </files>
     <config>    
-		<fields name="params">
-		    <fieldset name="basic">
-		        <field
-		               name="lang"
-		               type="sql"
-		               default="1"
-		               label="Select a language"
-		               query="SELECT hello AS value, lang FROM #__helloworld" />
-		    </fieldset>
-		</fields>      
+     
     </config>
 
 	<install>

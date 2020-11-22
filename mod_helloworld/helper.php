@@ -32,7 +32,9 @@ $db = JFactory::getDbo();
 $query = $db->getQuery(true)
             ->select($db->quoteName('hello'))
             ->from($db->quoteName('#__helloworld'))
-            ->where('id = '. $db->Quote($params));
+            ->where('lang = '. $db->Quote('en-GB'));
+                        
+            
 // Prepare the query
 $db->setQuery($query);
 // Load the row.
